@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row header-section">
+        <span>Angular 4/5 Nodejs File Upload Download Sample</span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="row card">
+                <div class="col-sm-12">
+                    <h4>Upload Section</h4>
+                    <div id="fileSelector">
+                        <input type="file" name="fileUplaod" id="fileUpload"
+                        multiple ng2FileSelect [uploader]="uploader">
+                    </div>
+                    <div>
+                        <div class="row uploadList" *ngFor="let item of uploader.queue">
+                            <div class="col-sm-4">{{item.file.name}}</div>
+                            <div class="col-sm-4">
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" 
+                                    [ngStyle]="{'width':item.progress+'%'}"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                    <button type="button" class="btn btn-dark" (click)="item.upload()">Upload</button>
+                                    <button type="button" class="btn btn-danger" (click)="item.remove()">Cancel</button>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row" *ngIf="uploader?.queue?.length > 0">
+                            <button type="button" class="btn btn-primary" (click)="uploader.uploadAll()">Upload All</button>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="row card">
+                <h4>Download Section</h4>
+
+                <div class="row" *ngFor="let item of attachmentList; let i = index"
+                style="margin:10px;padding:5px;background-color:rgb(231, 229, 229); border-radius:5px; line-height:40px;">
+                    <div class="col-sm-7">{{item.originalname}}</div>
+                    <div class="col-sm-5" style="text-align:center;"><button type="button" class="btn btn-primary" (click)="download(i)">Download</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

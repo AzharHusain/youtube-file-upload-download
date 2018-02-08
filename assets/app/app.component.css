@@ -1,0 +1,22 @@
+.header-section{
+    height: 80px;
+    line-height: 80px;
+    color: beige;
+    background-color: rgb(46, 43, 43);
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+.card{
+    background-color: white;
+    box-shadow:0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    color:black;
+    margin: 20px;
+    padding: 10px;
+}
+
+.uploadList{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
